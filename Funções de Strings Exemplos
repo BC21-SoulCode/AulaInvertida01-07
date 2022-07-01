@@ -1,0 +1,86 @@
+//Entre com seu nome e sobrenome
+String nome, ultimo_nome, nome_completo;
+
+nome = 'anakin';
+ultimo_nome = 'skywalker';
+
+//Armazena as variáveis com inicial maiúscula
+nome = nome.capitalize(); 
+ultimo_nome = ultimo_nome.capitalize();
+
+//Operação com Strings
+nome_completo = nome + ' ' + ultimo_nome;
+system.debug(nome_completo);
+
+//Verificar se contém
+system.debug(nome_completo.contains('sky'));
+system.debug(nome_completo.containsIgnoreCase('sky'));
+
+//Outros exemplos
+system.debug(nome_completo.countMatches('a'));
+system.debug(nome_completo.length());
+//____________________________________________________________________________________________________________
+
+
+//Cadastro de produtos
+String cod_prod1, cod_prod2, cod_prod3;
+
+cod_prod1 = 'SbL-515181';
+cod_prod2 = 'BLa-102056';
+cod_prod3 = 'cNL-648821';
+
+cod_prod1 = cod_prod1.toUpperCase();
+cod_prod2 = cod_prod2.toUpperCase();
+cod_prod3 = cod_prod3.toUpperCase();
+
+System.debug(cod_prod1);
+System.debug(cod_prod2);
+System.debug(cod_prod3);
+//____________________________________________________________________________________________________________
+
+
+//Cadastro CPF e CNPJ
+String cpf, cnpj;
+
+cpf = '489 654.222-88';
+cnpj = '35.555.675/0001-65';
+
+//CPF
+cpf = cpf.remove(' '); //OU cpf.deleteWhitespace());
+cpf = cpf.remove('.');
+cpf = cpf.remove('-');
+
+//CNPJ
+cnpj = cnpj.remove('/');
+cnpj = cnpj.remove('.');
+cnpj = cnpj.remove('-');
+
+system.debug(cpf);
+system.debug(cnpj);
+
+
+//BÔNUS
+// Pegar os número de CPF e CNPJ e colocar no formato com os caracteres especiais.
+String cpf1, cpf2, cpf3, cpf4;
+
+cpf1 = cpf.substring(0, 3);     //pega os caracteres do primeiro (posição 0) até o terceiro (posição 2)
+cpf2 = cpf.substring(3, 6);     //pega os caracteres do quarto (posição 3) até o sexto (posição 5)
+cpf3 = cpf.substring(6, 9);     //pega os caracteres do sétimo (posição 6) até o nono (posição 8)
+cpf4 = cpf.substring(9, 11);    //pega os caracteres do décimo (posição 9) até o décimo primeiro (posição 10)
+
+
+cpf = cpf1 +('.')+ cpf2 +('.')+ cpf3 +('-')+ cpf4;
+system.debug(cpf);
+
+
+String cnpj1, cnpj2, cnpj3, cnpj4, cnpj5;
+
+cnpj1 = cnpj.substring(0, 2);     //pega os caracteres do primeiro (posição 0) até o segundo (posição 1)
+cnpj2 = cnpj.substring(2, 5);     //pega os caracteres do terceiro (posição 2) até o quinto (posição 4)
+cnpj3 = cnpj.substring(5, 8);     //pega os caracteres do sexto (posição 5) até o oitavo (posição 7)
+cnpj4 = cnpj.substring(8, 12);    //pega os caracteres do nono (posição 8) até o décimo segundo (posição 11)
+cnpj5 = cnpj.substring(12, 14);    //pega os caracteres do décimo terceiro (posição 12) até o décimo quarto (posição 13)
+
+
+cnpj = cnpj1 +('.')+ cnpj2 +('.')+ cnpj3 +('/')+ cnpj4 +('-')+ cnpj5;
+system.debug(cnpj);
