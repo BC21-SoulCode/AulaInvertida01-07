@@ -1,0 +1,75 @@
+//Grupo:
+// Lucyanna
+// Ygor
+// Ralffer
+// Antônio
+
+// Exemplo 1
+// Imprimindo números de 1 a 10.
+
+for (integer contador = 1; contador <= 10; contador++) {
+    System.debug(contador);
+}
+
+// Exemplo 2 
+// Tabuada
+
+integer numeroDaTabuada = 2;
+integer resultado;
+// nesse momento o valor da variável ¨resultado¨ é nulo(null), vamos verificar!
+
+system.debug('Valor inicial do resultado -> ' + resultado);
+
+for (integer contador = 1; contador <= 9; contador++) {
+    resultado = contador * numeroDaTabuada;
+    System.debug(contador + ' x ' + numeroDaTabuada +  ' = ' + resultado);
+}
+
+// Exemplo 3 
+// Verificar se o número é par ou ímpar
+
+List<integer> listaDeNumeros = new List<integer>{1, 2, 3, 4};
+    
+for (integer contador = 0; contador <= 3; contador++) {
+
+    //Math.mod retorna o resto da divisão
+    integer verificacao = Math.mod(listaDeNumeros[contador],2);
+
+    if (verificacao == 0) {
+        System.debug('O número ' + listaDeNumeros[contador] + ' é par!');
+    } else {
+        System.debug('O número ' + listaDeNumeros[contador] + ' é ímpar!');
+    }
+}
+
+for ( integer n: listaDeNumeros ) {
+    
+     //Math.mod retorna o resto da divisão
+    integer verificacao = Math.mod(n, 2);
+    
+    if (verificacao == 0) {
+        System.debug('O número ' + n + ' é par!');
+    } else {
+        System.debug('O número ' + n + ' é ímpar!');
+    }
+}
+
+// SORTEIO
+
+List<string> listaDePessoas = new List<string>{'', '', '', '', '', '', '', '', '', ''};
+    
+//Gerar número aleatório 
+integer numeroAleatorio = (Math.random()* 10).intValue();
+string vencedorOuVencedora;
+
+for (string p: listaDePessoas) {
+    integer indiceDoParticipante = listaDePessoas.indexOf(p);
+    system.debug(indiceDoParticipante);
+
+    if (indiceDoParticipante == numeroAleatorio) {
+        vencedorOuVencedora = p;
+    }
+}  
+
+System.debug('🏆🏆🏆 ' + vencedorOuVencedora + ' 🏆🏆🏆');
+    
